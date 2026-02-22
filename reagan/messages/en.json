@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "research": "Research",
+    "blog": "Blog",
+    "contact": "Contact",
+    "partner": "Partner With Us",
+    "signin": "Sign In",
+    "signout": "Sign Out"
+  },
+  "locale": {
+    "label": "Language",
+    "en": "English",
+    "fr": "French",
+    "de": "German"
+  }
+}

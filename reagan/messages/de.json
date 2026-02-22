@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "products": "Produkte",
+    "research": "Forschung",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "partner": "Partnerschaft",
+    "signin": "Anmelden",
+    "signout": "Abmelden"
+  },
+  "locale": {
+    "label": "Sprache",
+    "en": "Englisch",
+    "fr": "Französisch",
+    "de": "Deutsch"
+  }
+}
