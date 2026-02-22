@@ -4,16 +4,16 @@ export interface SectionProps {
   children: ReactNode;
   className?: string;
   id?: string;
-  ariaLabel?: string;
-  ariaLabelledby?: string;
+  "aria-label"?: string;
+  "aria-labelledby"?: string;
 }
 
 export default function Section({
   children,
   className = "",
   id,
-  ariaLabel,
-  ariaLabelledby
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledby
 }: SectionProps) {
   return (
     <section

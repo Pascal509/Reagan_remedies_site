@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -29,9 +30,20 @@ export default function Footer() {
           className="grid gap-10 md:grid-cols-3"
         >
           <div className="space-y-4">
-            <p className="text-lg font-semibold text-brand-navy">
-              Reagan Remedies
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="relative h-10 w-10 overflow-hidden rounded-full border border-brand-soft bg-white">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Reagan Remedies logo"
+                  fill
+                  className="object-contain"
+                  sizes="40px"
+                />
+              </span>
+              <p className="text-lg font-semibold text-brand-navy">
+                Reagan Remedies
+              </p>
+            </div>
             <p className="text-sm leading-relaxed text-brand-neutral">
               Advancing clinical research and pharmaceutical innovation to improve
               patient outcomes worldwide.

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Container } from "@/components/common";
 
@@ -46,9 +46,6 @@ function useCountUp(target: number) {
 }
 
 export default function Stats() {
-  const values = useMemo(() => stats.map((stat) => stat.value), []);
-  const animatedValues = values.map((value) => useCountUp(value));
-
   return (
     <section className="bg-white" aria-labelledby="stats-heading">
       <Container className="py-20 md:py-24 lg:py-28">
@@ -62,19 +59,27 @@ export default function Stats() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="grid gap-6 rounded-2xl border border-brand-soft bg-white p-8 md:grid-cols-2 lg:grid-cols-4"
         >
-          {stats.map((stat, index) => (
-            <div key={stat.label} className="space-y-2">
-              <p className="text-3xl font-semibold text-brand-navy md:text-4xl">
-                {animatedValues[index]}
-                {stat.suffix}
-              </p>
-              <p className="text-sm font-medium uppercase tracking-[0.16em] text-brand-neutral">
-                {stat.label}
-              </p>
-            </div>
+          {stats.map((stat) => (
+            <StatCard key={stat.label} stat={stat} />
           ))}
         </motion.div>
       </Container>
     </section>
+  );
+}
+
+function StatCard({ stat }: { stat: StatItem }) {
+  const value = useCountUp(stat.value);
+
+  return (
+    <div className="space-y-2">
+      <p className="text-3xl font-semibold text-brand-navy md:text-4xl">
+        {value}
+        {stat.suffix}
+      </p>
+      <p className="text-sm font-medium uppercase tracking-[0.16em] text-brand-neutral">
+        {stat.label}
+      </p>
+    </div>
   );
 }

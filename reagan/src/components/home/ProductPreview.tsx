@@ -1,36 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { Container, Section, SectionHeader } from "@/components/common";
-import ProductCard from "@/components/common/ProductCard";
-
-const products = [
-  {
-    name: "Cardiavax",
-    category: "Cardiovascular",
-    description:
-      "Targeted therapy supporting long-term cardiac function and vascular stability."
-  },
-  {
-    name: "Neurovance",
-    category: "Neurology",
-    description:
-      "Precision formulation designed to improve cognitive resilience and neural recovery."
-  },
-  {
-    name: "RespiraCore",
-    category: "Respiratory",
-    description:
-      "Advanced inhalation platform for optimized pulmonary performance and comfort."
-  },
-  {
-    name: "OncoShield",
-    category: "Oncology",
-    description:
-      "Next-generation treatment protocol focused on patient-centric oncology outcomes."
-  }
-];
+import ProductCard from "@/components/products/ProductCard";
+import { products } from "@/lib/products";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -51,7 +26,11 @@ const itemVariants = {
 
 export default function ProductPreview() {
   return (
-    <Section className="bg-brand-soft/40" ariaLabelledby="flagship-therapies">
+    <Section
+      id="products"
+      className="bg-brand-soft/40"
+      aria-labelledby="flagship-therapies"
+    >
       <Container>
         <div className="space-y-14">
           <SectionHeader
@@ -66,13 +45,22 @@ export default function ProductPreview() {
             viewport={{ once: true, margin: "-80px" }}
             className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
           >
-            {products.map((product) => (
-              <motion.div key={product.name} variants={itemVariants}>
-                <ProductCard
-                  name={product.name}
-                  category={product.category}
-                  description={product.description}
-                />
+            {products.slice(0, 4).map((product) => (
+              <motion.div key={product.id} variants={itemVariants}>
+                <Link
+                  href={`/products/${product.slug}`}
+                  aria-label={`View ${product.name}`}
+                  className="block"
+                >
+                  <ProductCard
+                    name={product.name}
+                    category={product.category}
+                    description={product.shortDescription}
+                    imageSrc={product.image}
+                    ariaLabel={`${product.name} ${product.category} therapy`}
+                    showCta={false}
+                  />
+                </Link>
               </motion.div>
             ))}
           </motion.div>

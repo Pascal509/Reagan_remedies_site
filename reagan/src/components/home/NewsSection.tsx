@@ -45,7 +45,7 @@ const itemVariants = {
 
 export default function NewsSection() {
   return (
-    <Section ariaLabelledby="latest-insights">
+    <Section aria-labelledby="latest-insights">
       <Container>
         <div className="space-y-14">
           <SectionHeader

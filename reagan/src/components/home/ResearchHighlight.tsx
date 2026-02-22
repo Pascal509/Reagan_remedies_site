@@ -37,7 +37,11 @@ export default function ResearchHighlight({
   const isImageLeft = imagePosition === "left";
 
   return (
-    <Section className="bg-white" ariaLabelledby="research-highlight-heading">
+    <Section
+      id="research"
+      className="bg-white"
+      aria-labelledby="research-highlight-heading"
+    >
       <Container>
         <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr] lg:gap-20">
           <motion.div
