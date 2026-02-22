@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-
-import { Container, Section } from "@/components/common";
+import { Container, Section } from "../common";
 
 const subjects = [
   "General Inquiry",
@@ -169,7 +168,7 @@ export default function ContactPageClient() {
                     Address
                   </p>
                   <p className="mt-2 text-sm text-brand-neutral">
-                    No 24 Musa Yar'Adua Drive<br />
+                    No 24 Musa Yar&apos;Adua Drive<br />
                     New Owerri, Owerri<br />
                     Imo State, Nigeria
                   </p>
