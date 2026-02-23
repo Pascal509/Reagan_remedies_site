@@ -1,5 +1,4 @@
 export { default as ProductCard } from "./ProductCard";
-export { default as BlogCard } from "./BlogCard";
 export { default as Button } from "./Button";
 export { default as Container } from "./Container";
 export { default as Section } from "./Section";

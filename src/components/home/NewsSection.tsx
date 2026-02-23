@@ -1,28 +1,28 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { Container, Section, SectionHeader } from "@/components/common";
-import BlogCard from "@/components/common/BlogCard";
 
 const posts = [
   {
     title: "Reagan Remedies expands Phase III oncology trials",
     description:
       "New multicenter studies advance patient access to precision immunotherapies across 12 countries.",
-    href: "/blog/phase-iii-oncology"
+    href: "/case-studies"
   },
   {
     title: "Breakthrough designation for next-gen cardiology platform",
     description:
       "Regulatory recognition accelerates timelines for innovative cardiovascular care solutions.",
-    href: "/blog/cardiology-platform"
+    href: "/case-studies"
   },
   {
     title: "Global research consortium announces neurological insights",
     description:
       "Collaborative data sets unlock new pathways for neurodegenerative disease treatment.",
-    href: "/blog/neurology-consortium"
+    href: "/case-studies"
   }
 ];
 
@@ -61,12 +61,24 @@ export default function NewsSection() {
             className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
           >
             {posts.map((post) => (
-              <motion.div key={post.href} variants={itemVariants}>
-                <BlogCard
-                  title={post.title}
-                  description={post.description}
+              <motion.div key={post.title} variants={itemVariants}>
+                <Link
                   href={post.href}
-                />
+                  className="group flex h-full flex-col rounded-2xl border border-brand-soft bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-primary">
+                    Research Update
+                  </p>
+                  <h3 className="mt-4 text-lg font-semibold text-brand-navy">
+                    {post.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-brand-neutral">
+                    {post.description}
+                  </p>
+                  <span className="mt-auto pt-6 text-sm font-semibold text-brand-primary">
+                    View Research
+                  </span>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
