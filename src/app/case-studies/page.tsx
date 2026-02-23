@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
-import CaseStudyCard from "@/components/common/CaseStudyCard";
-import { Container, Section, SectionHeader } from "@/components/common";
+import { CaseStudyCard, Container, Section, SectionHeader } from "@/components/common";
 import { getCaseStudies } from "@/lib/content-service";
 export const metadata: Metadata = {
   title: "Case Studies & Research Publications | Reagan Remedies",
