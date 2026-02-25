@@ -563,7 +563,7 @@ export default function PartnerWithUsPage() {
             </p>
             <div className="rounded-2xl border border-brand-soft bg-white p-5 text-sm text-brand-neutral">
               <p className="font-semibold text-brand-navy">
-                No 24 Musa Yar'Adua Drive
+                No 24 Musa Yar&apos;Adua Drive
               </p>
               <p>New Owerri, Owerri</p>
               <p>Imo State, Nigeria</p>
