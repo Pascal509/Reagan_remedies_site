@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArrowRight,
+  Building2,
+  Download,
+  Factory,
+  Globe,
+  MapPin,
+  Pill,
+  ShieldCheck
+} from "lucide-react";
 
 import { Container, Section } from "@/components/common";
 
@@ -88,27 +98,33 @@ const governancePoints = [
 const snapshotItems = [
   {
     label: "Industry",
-    value: "Pharmaceutical Manufacturing & Distribution"
+    value: "Pharmaceutical Manufacturing & Distribution",
+    icon: Building2
   },
   {
     label: "Headquarters",
-    value: "No 24 Musa Yar'Adua Drive, New Owerri, Imo State, Nigeria"
+    value: "No 24 Musa Yar'Adua Drive, New Owerri, Imo State, Nigeria",
+    icon: MapPin
   },
   {
     label: "Operational Scope",
-    value: "Nigeria & West Africa"
+    value: "Nigeria & West Africa",
+    icon: Globe
   },
   {
     label: "Facility Standard",
-    value: "GMP-Compliant Manufacturing Complex"
+    value: "GMP-Compliant Manufacturing Complex",
+    icon: Factory
   },
   {
     label: "Product Categories",
-    value: "General English Medicines, Ayurvedic, Homeopathic & Herbal Drugs"
+    value: "General English Medicines, Ayurvedic, Homeopathic & Herbal Drugs",
+    icon: Pill
   },
   {
     label: "Core Focus",
-    value: "Quality, Compliance, Accessibility"
+    value: "Quality, Compliance, Accessibility",
+    icon: ShieldCheck
   }
 ];
 
@@ -161,14 +177,16 @@ export default function PartnerWithUsPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-primary/90"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-primary/90"
                 >
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   Initiate Partnership Discussion
                 </Link>
                 <Link
                   href="/about"
-                  className="inline-flex items-center justify-center rounded-md border border-brand-soft px-6 py-3 text-sm font-semibold text-brand-navy transition hover:bg-brand-soft/60"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-soft px-6 py-3 text-sm font-semibold text-brand-navy transition hover:bg-brand-soft/60"
                 >
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   About Reagan Remedies
                 </Link>
               </div>
@@ -262,7 +280,7 @@ export default function PartnerWithUsPage() {
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary">
-                  Corporate Snapshot
+                  Executive Summary
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-brand-navy md:text-4xl">
                   Corporate Snapshot
@@ -279,8 +297,8 @@ export default function PartnerWithUsPage() {
                   key={item.label}
                   className="flex gap-4 rounded-2xl border border-brand-soft/70 bg-brand-soft/30 p-5"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-xs font-semibold text-brand-primary">
-                    Icon
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-brand-primary">
+                    <item.icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-brand-navy">
@@ -332,7 +350,7 @@ export default function PartnerWithUsPage() {
           <div className="space-y-6">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary">
-                Strategic Growth Roadmap
+                Growth Roadmap
               </p>
               <h2 className="mt-3 text-3xl font-semibold text-brand-navy md:text-4xl">
                 Strategic Growth Roadmap
@@ -435,7 +453,7 @@ export default function PartnerWithUsPage() {
             <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
               <div className="space-y-4">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary">
-                  Corporate Profile
+                  Investor Resources
                 </p>
                 <h2 className="text-3xl font-semibold text-brand-navy md:text-4xl">
                   Corporate Profile
@@ -454,8 +472,8 @@ export default function PartnerWithUsPage() {
                   href="/documents/reagan-corporate-profile.pdf"
                   className="inline-flex items-center justify-center gap-3 rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-primary/90"
                 >
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-xs font-semibold">
-                    PDF
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
+                    <Download className="h-4 w-4" aria-hidden="true" />
                   </span>
                   Download Corporate Profile
                 </Link>
@@ -574,7 +592,7 @@ export default function PartnerWithUsPage() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary">
-                Build the Future of Healthcare With Us
+                Investor Relations
               </p>
               <h2 className="text-3xl font-semibold text-white md:text-4xl">
                 Build the Future of Healthcare With Us
@@ -587,14 +605,16 @@ export default function PartnerWithUsPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:bg-white/90"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:bg-white/90"
               >
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 Contact Investor Relations
               </Link>
               <button
                 type="button"
-                className="inline-flex items-center justify-center rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
+                <Download className="h-4 w-4" aria-hidden="true" />
                 Download Corporate Profile
               </button>
             </div>

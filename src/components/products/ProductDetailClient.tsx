@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { ArrowRight, Download } from "lucide-react";
 
 import { Button, Container, Section } from "@/components/common";
 import HCPDisclaimerModal from "@/components/products/HCPDisclaimerModal";
@@ -41,9 +42,9 @@ export default function ProductDetailClient({
   return (
     <>
       <HCPDisclaimerModal isOpen={!userType} onSelect={handleSelection} />
-      <Section className="pb-0">
+      <Section className="py-6 md:py-8">
         <Container>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-neutral">
               Product detail view
             </div>
@@ -82,7 +83,10 @@ export default function ProductDetailClient({
                     Detailed prescribing information and regulatory dossiers.
                   </p>
                 </div>
-                <Button variant="primary">Download Datasheet</Button>
+                <Button variant="primary">
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  Download Datasheet
+                </Button>
               </div>
             </Container>
           </Section>
@@ -110,9 +114,10 @@ export default function ProductDetailClient({
               <div className="mt-6">
                 <Link
                   href="/case-studies"
-                  className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary"
+                  className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-brand-primary"
                 >
                   Explore clinical insights
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
             </div>

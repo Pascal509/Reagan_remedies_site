@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BookOpen } from "lucide-react";
 
 import { CaseStudyCard, Container, Section, SectionHeader } from "@/components/common";
 import { getCaseStudies } from "@/lib/content-service";
@@ -19,6 +20,7 @@ export default async function CaseStudiesPage() {
             title="Patient Case Studies & Research Publications"
             subtitle="Exploring clinical insights, therapeutic breakthroughs, and patient-centered outcomes."
             titleId="case-studies-heading"
+            icon={<BookOpen className="h-5 w-5" aria-hidden="true" />}
           />
           <div
             className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"

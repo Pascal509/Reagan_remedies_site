@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { FlaskConical, Pill } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -85,12 +86,14 @@ export default function Hero() {
               href="#research"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-primary/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 md:text-base"
             >
+              <FlaskConical className="h-4 w-4" aria-hidden="true" />
               Explore Our Research
             </Link>
             <Link
               href="#products"
               className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-primary px-6 py-3 text-sm font-semibold text-brand-primary transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 md:text-base"
             >
+              <Pill className="h-4 w-4" aria-hidden="true" />
               View Our Products
             </Link>
           </div>

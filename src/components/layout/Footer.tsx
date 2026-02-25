@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Linkedin, Mail, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Container } from "@/components/common";
@@ -14,8 +15,8 @@ const complianceLinks = [
 ];
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com" },
-  { label: "X", href: "https://x.com" }
+  { label: "LinkedIn", href: "https://www.linkedin.com", Icon: Linkedin },
+  { label: "X", href: "https://x.com", Icon: Twitter }
 ];
 
 export default function Footer() {
@@ -75,20 +76,22 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="mailto:contact@reaganremedies.com"
-                className="text-sm font-medium text-brand-neutral transition-colors hover:text-brand-navy"
+                className="flex items-center gap-2 text-sm font-medium text-brand-neutral transition-colors hover:text-brand-navy"
               >
+                <Mail className="h-4 w-4" aria-hidden="true" />
                 contact@reaganremedies.com
               </a>
               <div className="flex items-center gap-4" aria-label="Social links">
-                {socialLinks.map((link) => (
+                {socialLinks.map(({ href, label, Icon }) => (
                   <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-sm font-medium text-brand-neutral transition-colors hover:text-brand-navy"
+                    key={href}
+                    href={href}
+                    className="flex items-center gap-2 text-sm font-medium text-brand-neutral transition-colors hover:text-brand-navy"
                     rel="noreferrer"
                     target="_blank"
                   >
-                    {link.label}
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                    {label}
                   </a>
                 ))}
               </div>

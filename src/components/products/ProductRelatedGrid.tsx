@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Layers } from "lucide-react";
 
 import { Container, Section, SectionHeader } from "@/components/common";
 import ProductCard from "./ProductCard";
@@ -21,6 +22,7 @@ export default function ProductRelatedGrid({
             title="Related Products"
             subtitle="Explore additional therapies across our advanced portfolio."
             titleId="related-products"
+            icon={<Layers className="h-5 w-5" aria-hidden="true" />}
           />
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FileText, PhoneCall } from "lucide-react";
 
 import { Button, Container, Section } from "@/components/common";
 import type { Product } from "@/lib/products";
@@ -30,8 +31,14 @@ export default function ProductDetailHero({ product }: { product: Product }) {
               </span>
             </div>
             <div className="flex flex-wrap gap-4 pt-2">
-              <Button variant="primary">Contact Sales</Button>
-              <Button variant="outline">Request Information</Button>
+              <Button variant="primary">
+                <PhoneCall className="h-4 w-4" aria-hidden="true" />
+                Contact Sales
+              </Button>
+              <Button variant="outline">
+                <FileText className="h-4 w-4" aria-hidden="true" />
+                Request Information
+              </Button>
             </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-brand-soft bg-white shadow-sm">

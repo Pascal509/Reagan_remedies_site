@@ -1,5 +1,6 @@
 "use client";
 
+import { Pill } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import type { Product } from "@/lib/products";
@@ -23,9 +24,14 @@ export default function ProductList({ products }: { products: Product[] }) {
     <div className="space-y-8">
       <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
         <div>
-          <h1 className="text-3xl font-semibold text-brand-navy md:text-4xl">
-            Product Portfolio
-          </h1>
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft/60 text-brand-primary">
+              <Pill className="h-5 w-5" aria-hidden="true" />
+            </span>
+            <h1 className="text-3xl font-semibold text-brand-navy md:text-4xl">
+              Product Portfolio
+            </h1>
+          </div>
           <p className="mt-2 text-sm text-brand-neutral">
             Explore our regulated therapies across clinical and commercial stages.
           </p>

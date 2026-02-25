@@ -1,5 +1,6 @@
 "use client";
 
+import { Building2, Mail, Send, User } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -150,14 +151,20 @@ export default function SubscribePageClient() {
                     <label className="text-sm font-semibold text-brand-navy">
                       Full Name <span className="text-brand-primary">*</span>
                     </label>
-                    <input
-                      type="text"
-                      {...register("fullName", {
-                        required: "Full name is required."
-                      })}
-                      aria-invalid={Boolean(errors.fullName)}
-                      className="w-full rounded-md border border-brand-soft px-4 py-2 text-sm text-brand-navy focus:border-brand-primary focus:outline-none"
-                    />
+                    <div className="relative">
+                      <User
+                        className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-neutral"
+                        aria-hidden="true"
+                      />
+                      <input
+                        type="text"
+                        {...register("fullName", {
+                          required: "Full name is required."
+                        })}
+                        aria-invalid={Boolean(errors.fullName)}
+                        className="w-full rounded-md border border-brand-soft px-10 py-2 text-sm text-brand-navy focus:border-brand-primary focus:outline-none"
+                      />
+                    </div>
                     {errors.fullName && (
                       <p className="text-xs text-red-600">
                         {errors.fullName.message}
@@ -168,18 +175,24 @@ export default function SubscribePageClient() {
                     <label className="text-sm font-semibold text-brand-navy">
                       Email Address <span className="text-brand-primary">*</span>
                     </label>
-                    <input
-                      type="email"
-                      {...register("email", {
-                        required: "Email address is required.",
-                        pattern: {
-                          value: /\S+@\S+\.\S+/,
-                          message: "Enter a valid email address."
-                        }
-                      })}
-                      aria-invalid={Boolean(errors.email)}
-                      className="w-full rounded-md border border-brand-soft px-4 py-2 text-sm text-brand-navy focus:border-brand-primary focus:outline-none"
-                    />
+                    <div className="relative">
+                      <Mail
+                        className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-neutral"
+                        aria-hidden="true"
+                      />
+                      <input
+                        type="email"
+                        {...register("email", {
+                          required: "Email address is required.",
+                          pattern: {
+                            value: /\S+@\S+\.\S+/,
+                            message: "Enter a valid email address."
+                          }
+                        })}
+                        aria-invalid={Boolean(errors.email)}
+                        className="w-full rounded-md border border-brand-soft px-10 py-2 text-sm text-brand-navy focus:border-brand-primary focus:outline-none"
+                      />
+                    </div>
                     {errors.email && (
                       <p className="text-xs text-red-600">
                         {errors.email.message}
@@ -190,11 +203,17 @@ export default function SubscribePageClient() {
                     <label className="text-sm font-semibold text-brand-navy">
                       Organization
                     </label>
-                    <input
-                      type="text"
-                      {...register("organization")}
-                      className="w-full rounded-md border border-brand-soft px-4 py-2 text-sm text-brand-navy focus:border-brand-primary focus:outline-none"
-                    />
+                    <div className="relative">
+                      <Building2
+                        className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-neutral"
+                        aria-hidden="true"
+                      />
+                      <input
+                        type="text"
+                        {...register("organization")}
+                        className="w-full rounded-md border border-brand-soft px-10 py-2 text-sm text-brand-navy focus:border-brand-primary focus:outline-none"
+                      />
+                    </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-brand-navy">
@@ -248,8 +267,9 @@ export default function SubscribePageClient() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
+                  <Send className="h-4 w-4" aria-hidden="true" />
                   Subscribe
                 </button>
                 <p className="text-xs text-brand-neutral">

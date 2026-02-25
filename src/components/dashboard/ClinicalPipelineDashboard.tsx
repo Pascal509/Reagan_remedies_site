@@ -9,6 +9,7 @@ import {
   YAxis
 } from "recharts";
 import { motion } from "framer-motion";
+import { Activity } from "lucide-react";
 
 import { Container, Section, SectionHeader } from "@/components/common";
 
@@ -47,6 +48,7 @@ export default function ClinicalPipelineDashboard() {
             title="Clinical Pipeline"
             subtitle="An enterprise view of therapeutic programs advancing through discovery and regulatory approval."
             titleId="pipeline-dashboard"
+            icon={<Activity className="h-5 w-5" aria-hidden="true" />}
           />
 
           <motion.div

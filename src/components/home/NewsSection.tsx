@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Newspaper } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Container, Section, SectionHeader } from "@/components/common";
@@ -52,6 +53,7 @@ export default function NewsSection() {
             title="Latest Insights"
             subtitle="Regulatory updates, research milestones, and scientific perspectives from our global teams."
             titleId="latest-insights"
+            icon={<Newspaper className="h-5 w-5" aria-hidden="true" />}
           />
           <motion.div
             variants={containerVariants}

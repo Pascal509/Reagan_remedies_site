@@ -1,4 +1,12 @@
 import Link from "next/link";
+import {
+  ArrowRight,
+  Award,
+  BookOpen,
+  HeartPulse,
+  Lightbulb,
+  ShieldCheck
+} from "lucide-react";
 
 import { Container, Section } from "@/components/common";
 
@@ -6,22 +14,26 @@ const values = [
   {
     title: "Integrity",
     description:
-      "We uphold ethical standards and transparent practices across every market."
+      "We uphold ethical standards and transparent practices across every market.",
+    icon: ShieldCheck
   },
   {
     title: "Innovation",
     description:
-      "We invest in science-led solutions that improve access and outcomes."
+      "We invest in science-led solutions that improve access and outcomes.",
+    icon: Lightbulb
   },
   {
     title: "Excellence",
     description:
-      "We deliver consistent quality through rigorous manufacturing discipline."
+      "We deliver consistent quality through rigorous manufacturing discipline.",
+    icon: Award
   },
   {
     title: "Patient-Centered Care",
     description:
-      "We prioritize safety, efficacy, and affordability in every therapy."
+      "We prioritize safety, efficacy, and affordability in every therapy.",
+    icon: HeartPulse
   }
 ];
 
@@ -56,14 +68,16 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/products"
-                  className="inline-flex items-center justify-center rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-primary/90"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-primary/90"
                 >
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   Explore Our Products
                 </Link>
                 <Link
                   href="/case-studies"
-                  className="inline-flex items-center justify-center rounded-md border border-brand-soft px-6 py-3 text-sm font-semibold text-brand-navy transition hover:bg-brand-soft/60"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-soft px-6 py-3 text-sm font-semibold text-brand-navy transition hover:bg-brand-soft/60"
                 >
+                  <BookOpen className="h-4 w-4" aria-hidden="true" />
                   View Case Studies
                 </Link>
               </div>
@@ -274,8 +288,8 @@ export default function AboutPage() {
                 key={value.title}
                 className="rounded-3xl border border-brand-soft bg-white p-6 shadow-sm"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft/60 text-sm font-semibold text-brand-primary">
-                  Icon
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft/60 text-brand-primary">
+                  <value.icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <h3 className="mt-6 text-lg font-semibold text-brand-navy">
                   {value.title}
@@ -309,14 +323,16 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:bg-white/90"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:bg-white/90"
               >
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 Contact Us
               </Link>
               <Link
                 href="/products"
-                className="inline-flex items-center justify-center rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 View Products
               </Link>
             </div>
